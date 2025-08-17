@@ -292,18 +292,40 @@ class _QuizPageState extends State<QuizPage> {
     });
   }
 
+  String _getInstruction(String? type) {
+    switch (type) {
+      case 'kosakata':
+        return 'Petunjuk:\nLihat gambar, lalu pilih jawaban yang benar sesuai dengan gambar tersebut.';
+      case 'kalimat':
+        return 'Petunjuk:\nLengkapi kalimat dengan pilihan jawaban yang paling tepat.';
+      case 'percakapan':
+        return 'Petunjuk:\nDengarkan audio (jika ada), lalu pilih jawaban yang sesuai dengan percakapan.';
+      default:
+        return 'Petunjuk:\nPilih jawaban yang paling tepat.';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     final question = _questions[_currentQuestion];
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Kuis Gabungan'),
-        backgroundColor: Colors.orange.shade100, // opsional: warna appbar
+        title: Text(
+          'Kuis Gabungan',
+          style: GoogleFonts.josefinSans(
+            fontSize: screenWidth * 0.055,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.orange.shade100,
         elevation: 0,
       ),
-      backgroundColor: Colors.orange.shade50, // Ganti warna background di sini
+      backgroundColor: Colors.orange.shade50,
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(screenWidth * 0.04),
         child: Center(
           child:
               _quizFinished
@@ -314,16 +336,16 @@ class _QuizPageState extends State<QuizPage> {
                       Text(
                         'Kuis Selesai!',
                         style: GoogleFonts.josefinSans(
-                          fontSize: 25,
+                          fontSize: screenWidth * 0.07,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: screenHeight * 0.03),
                       Text(
                         'SELAMAT !!!',
                         style: GoogleFonts.josefinSans(
-                          fontSize: 25,
+                          fontSize: screenWidth * 0.07,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
@@ -331,15 +353,25 @@ class _QuizPageState extends State<QuizPage> {
                       Text(
                         'Skor Anda: $_score dari ${_questions.length}',
                         style: GoogleFonts.josefinSans(
-                          fontSize: 25,
+                          fontSize: screenWidth * 0.07,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 20),
-                      ElevatedButton(
-                        onPressed: _resetQuiz,
-                        child: Text('Ulangi Kuis'),
+                      SizedBox(height: screenHeight * 0.03),
+                      SizedBox(
+                        width: screenWidth * 0.5,
+                        height: screenHeight * 0.07,
+                        child: ElevatedButton(
+                          onPressed: _resetQuiz,
+                          child: Text(
+                            'Ulangi Kuis',
+                            style: GoogleFonts.josefinSans(
+                              fontSize: screenWidth * 0.05,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   )
@@ -348,25 +380,28 @@ class _QuizPageState extends State<QuizPage> {
                     children: [
                       // Petunjuk pengerjaan soal
                       Container(
-                        padding: EdgeInsets.all(12),
-                        margin: EdgeInsets.only(bottom: 16),
+                        padding: EdgeInsets.all(screenWidth * 0.03),
+                        margin: EdgeInsets.only(bottom: screenHeight * 0.02),
                         decoration: BoxDecoration(
                           color: Colors.orange.shade100,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
-                          'Petunjuk:\nPilih jawaban yang paling tepat sesuai dengan gambar, audio, atau pertanyaan yang diberikan. Tekan salah satu pilihan untuk melanjutkan ke soal berikutnya.',
-                          style: TextStyle(fontSize: 16),
+                          _getInstruction(question['type'] as String?),
+                          style: TextStyle(fontSize: screenWidth * 0.045),
                         ),
                       ),
                       Text(
                         'Soal ${_currentQuestion + 1} dari ${_questions.length}',
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(fontSize: screenWidth * 0.05),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: screenHeight * 0.02),
                       if (question['type'] == 'kosakata' &&
                           question['image'] != null)
-                        Image.asset(question['image'] as String, height: 150),
+                        Image.asset(
+                          question['image'] as String,
+                          height: screenHeight * 0.22,
+                        ),
                       if (question['type'] == 'percakapan' &&
                           question['context'] != null)
                         ...((question['context'] as List)
@@ -377,7 +412,7 @@ class _QuizPageState extends State<QuizPage> {
                                     IconButton(
                                       icon: Icon(
                                         Icons.play_arrow,
-                                        size: 50,
+                                        size: screenWidth * 0.13,
                                         color: Colors.deepPurple,
                                       ),
                                       onPressed:
@@ -390,28 +425,30 @@ class _QuizPageState extends State<QuizPage> {
                                       dialog['label'],
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 20,
+                                        fontSize: screenWidth * 0.05,
                                         color: Colors.deepPurple,
                                       ),
                                     ),
                                   if (dialog is Map && dialog['text'] != null)
                                     Text(
                                       dialog['text'],
-                                      style: TextStyle(fontSize: 16),
+                                      style: TextStyle(
+                                        fontSize: screenWidth * 0.045,
+                                      ),
                                     ),
                                 ],
                               ),
                             )
                             .toList()),
-                      SizedBox(height: 10),
+                      SizedBox(height: screenHeight * 0.01),
                       Text(
                         question['question'] as String,
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: screenWidth * 0.055,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 30),
+                      SizedBox(height: screenHeight * 0.03),
                       ...(question['options'] as List<String>)
                           .asMap()
                           .entries
@@ -420,7 +457,9 @@ class _QuizPageState extends State<QuizPage> {
                             String option = entry.value;
                             bool isPressed = _pressedOptionIndex == idx;
                             return Container(
-                              margin: EdgeInsets.only(bottom: 12),
+                              margin: EdgeInsets.only(
+                                bottom: screenHeight * 0.012,
+                              ),
                               child: GestureDetector(
                                 onTap: () => _answerQuestion(option),
                                 onTapDown: (_) {
@@ -450,12 +489,12 @@ class _QuizPageState extends State<QuizPage> {
                                       color: Colors.deepPurple.shade100,
                                     ),
                                   ),
-                                  height: 48,
+                                  height: screenHeight * 0.06,
                                   alignment: Alignment.center,
                                   child: Text(
                                     option,
                                     style: GoogleFonts.josefinSans(
-                                      fontSize: 20,
+                                      fontSize: screenWidth * 0.05,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black,
                                     ),
