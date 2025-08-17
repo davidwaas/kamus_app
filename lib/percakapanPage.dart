@@ -17,7 +17,7 @@ class _percakapanPageState extends State<percakapanPage> {
   bool _isListening = false;
   String _translatedText = "Hasil Terjemahan";
 
-  final List<String> languages = ['meher', 'ohoirata', 'indonesia', 'inggris'];
+  final List<String> languages = ['meher', 'oirata', 'indonesia', 'inggris'];
   String sourceLang = 'indonesia';
   String targetLang = 'meher';
 

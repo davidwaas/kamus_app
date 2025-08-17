@@ -16,17 +16,15 @@ class _kalimatPageState extends State<kalimatPage> {
   String _spokenText = '';
   late final DatabaseHelper db;
 
-  List<String> languages = ['meher', 'ohoirata', 'indonesia', 'inggris'];
+  List<String> languages = ['meher', 'oirata', 'indonesia', 'inggris'];
   String _sourceLang = 'indonesia'; // bahasa asal
   String _targetLang = 'meher'; // bahasa tujuan
 
   @override
   void initState() {
     super.initState();
-    _insertSampleData();
     _speech = stt.SpeechToText();
     db = DatabaseHelper();
-    _insertSampleData();
   }
 
   void _startListening() async {
@@ -74,70 +72,6 @@ class _kalimatPageState extends State<kalimatPage> {
 
   final TextEditingController _controller = TextEditingController();
   String? _result;
-
-  void _insertSampleData() async {
-    final db = DatabaseHelper();
-    final existing = await db.searchByLanguage(
-      keyword: _spokenText,
-      language: _sourceLang,
-    );
-    if (existing.isNotEmpty) return; // Skip jika sudah ada data
-    await db.insertWordMultiLang(
-      meher: "maya'u",
-      ohoirata: 'ante',
-      indonesia: 'saya',
-      inggris: 'I',
-    );
-    await db.insertWordMultiLang(
-      meher: "ma'ak",
-      ohoirata: "me'de",
-      indonesia: 'makan',
-      inggris: 'eat',
-    );
-    await db.insertWordMultiLang(
-      meher: "namkuru",
-      ohoirata: "ta'ya",
-      indonesia: 'tidur',
-      inggris: 'sleep',
-    );
-    await db.insertWordMultiLang(
-      meher: "kirna",
-      ohoirata: "hala",
-      indonesia: 'kebun',
-      inggris: 'garden',
-    );
-    await db.insertWordMultiLang(
-      meher: "pipi",
-      ohoirata: "hihiyotowa",
-      indonesia: 'kambing',
-      inggris: 'goat',
-    );
-    await db.insertWordMultiLang(
-      meher: "kaleuk",
-      ohoirata: "dthele",
-      indonesia: 'jagung',
-      inggris: 'corn',
-    );
-    await db.insertWordMultiLang(
-      meher: "kalla",
-      ohoirata: "iyar",
-      indonesia: 'jalan',
-      inggris: 'road',
-    );
-    await db.insertWordMultiLang(
-      meher: "i'in",
-      ohoirata: "ahi",
-      indonesia: 'ikan',
-      inggris: 'fish',
-    );
-    await db.insertWordMultiLang(
-      meher: "inhoi",
-      ohoirata: "uman",
-      indonesia: 'siapa',
-      inggris: 'who',
-    );
-  }
-
   String _combineTokens(List<String> tokens) {
     final buffer = StringBuffer();
     for (int i = 0; i < tokens.length; i++) {

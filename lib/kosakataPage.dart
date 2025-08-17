@@ -112,7 +112,7 @@ class _kosakataPageState extends State<kosakataPage> {
                   return ListTile(
                     title: Text(word['indonesia']),
                     subtitle: Text(
-                      'Inggris: ${word['inggris']} | Meher: ${word['meher']} | Ohoirata: ${word['ohoirata']}',
+                      'Inggris: ${word['inggris']} | Meher: ${word['meher']} | oirata: ${word['oirata']}',
                     ),
                   );
                 },
