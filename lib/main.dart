@@ -106,7 +106,7 @@ class _KamusHomePageState extends State<KamusHomePage> {
                     ),
                   ),
                 );
-              }).toList(),
+              }),
             ],
           ),
         ),

@@ -39,7 +39,7 @@ class _QuizPageState extends State<QuizPage> {
       'type': 'kosakata',
       'image': 'assets/4.png',
       'question': "Sebutkan buah diatas dalam bahasa Oirata...",
-      'options': ["Mu’uwoi", 'Maplana', 'Haiya', 'Mumlay'],
+      'options': ["Mu'uwoi", 'Maplana', 'Haiya', 'Mumlay'],
       'answer': 'Haiya',
     },
     {
@@ -47,8 +47,8 @@ class _QuizPageState extends State<QuizPage> {
       'image': 'assets/5.png',
       'question':
           "Gambar diatas menunjukkan orang yang sedang makan. Apa kata makan dalam bahasa Meher ",
-      'options': ['Namkuru', 'Ma’ak', 'Wakuku', 'Maroho'],
-      'answer': 'Ma’ak',
+      'options': ['Namkuru', "Ma'ak", 'Wakuku', 'Maroho'],
+      'answer': "Ma'ak",
     },
     {
       'type': 'kosakata',
@@ -299,7 +299,7 @@ class _QuizPageState extends State<QuizPage> {
       case 'kalimat':
         return 'Petunjuk:\nLengkapi kalimat dengan pilihan jawaban yang paling tepat.';
       case 'percakapan':
-        return 'Petunjuk:\nDengarkan audio (jika ada), lalu pilih jawaban yang sesuai dengan percakapan.';
+        return 'Petunjuk:\nDengarkan audio, lalu pilih jawaban yang sesuai dengan percakapan.';
       default:
         return 'Petunjuk:\nPilih jawaban yang paling tepat.';
     }
@@ -400,7 +400,7 @@ class _QuizPageState extends State<QuizPage> {
                           question['image'] != null)
                         Image.asset(
                           question['image'] as String,
-                          height: screenHeight * 0.22,
+                          height: screenHeight * 0.20,
                         ),
                       if (question['type'] == 'percakapan' &&
                           question['context'] != null)
@@ -435,6 +435,7 @@ class _QuizPageState extends State<QuizPage> {
                                       style: TextStyle(
                                         fontSize: screenWidth * 0.045,
                                       ),
+                                      textAlign: TextAlign.justify,
                                     ),
                                 ],
                               ),
@@ -502,8 +503,7 @@ class _QuizPageState extends State<QuizPage> {
                                 ),
                               ),
                             );
-                          })
-                          .toList(),
+                          }),
                     ],
                   ),
         ),
