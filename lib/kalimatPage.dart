@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kamus_app/database_helper.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
@@ -14,45 +15,50 @@ class _kalimatPageState extends State<kalimatPage> {
   late stt.SpeechToText _speech;
   bool _isListening = false;
   String _spokenText = '';
-  late final DatabaseHelper db;
+  List<Map<String, dynamic>> _allWords = [];
 
-  List<String> languages = ['meher', 'oirata', 'indonesia', 'inggris'];
-  String _sourceLang = 'indonesia'; // bahasa asal
-  String _targetLang = 'meher'; // bahasa tujuan
+  List<String> languages = ['meher', 'oirata', 'indonesia', 'english'];
+  String _sourceLang = 'indonesia';
+  String _targetLang = 'meher';
 
   @override
   void initState() {
     super.initState();
     _speech = stt.SpeechToText();
-    db = DatabaseHelper();
+    _loadWords();
+  }
+
+  Future<void> _loadWords() async {
+    final String jsonString = await rootBundle.loadString(
+      'assets/kosakata.json',
+    );
+    final List<dynamic> jsonData = json.decode(jsonString);
+    setState(() {
+      _allWords = jsonData.cast<Map<String, dynamic>>();
+    });
   }
 
   void _startListening() async {
     bool available = await _speech.initialize();
-
     if (available) {
       setState(() => _isListening = true);
-
-      // Tentukan localeId berdasarkan _sourceLang
       String localeId;
       switch (_sourceLang) {
         case 'indonesia':
           localeId = 'id_ID';
           break;
-        case 'inggris':
+        case 'english':
           localeId = 'en_US';
           break;
-        // Tambahkan locale lain jika ada
         default:
-          localeId = 'id_ID'; // fallback
+          localeId = 'id_ID';
       }
-
       await _speech.listen(
         localeId: localeId,
         onResult: (result) {
           setState(() {
             _spokenText = result.recognizedWords;
-            _controller.text = _spokenText; // Isi kotak input otomatis
+            _controller.text = _spokenText;
           });
         },
       );
@@ -72,63 +78,51 @@ class _kalimatPageState extends State<kalimatPage> {
 
   final TextEditingController _controller = TextEditingController();
   String? _result;
-  String _combineTokens(List<String> tokens) {
-    final buffer = StringBuffer();
-    for (int i = 0; i < tokens.length; i++) {
-      final token = tokens[i];
-      if (i > 0 && !RegExp(r'[.,!?;]').hasMatch(token)) {
-        buffer.write(' ');
-      }
-      buffer.write(token);
-    }
-    return buffer.toString();
-  }
 
-  void _searchWord() async {
-    final db = DatabaseHelper();
-    final input = _controller.text.trim();
-
-    // Pisahkan kata dan tanda baca, contoh: ["Maya'u", ",", "ma'ak", "."]
+  String _translateSentence(String sentence) {
     final wordRegExp = RegExp(r"[\w']+|[.,!?;]");
-
     final tokens =
-        wordRegExp.allMatches(input).map((m) => m.group(0)!).toList();
-
+        wordRegExp.allMatches(sentence).map((m) => m.group(0)!).toList();
     List<String> translatedTokens = [];
 
     for (String token in tokens) {
-      // Jika token adalah tanda baca, langsung tambahkan
       if (RegExp(r'[.,!?;]').hasMatch(token)) {
         translatedTokens.add(token);
       } else {
-        final results = await db.searchByLanguage(
-          keyword: token.toLowerCase(),
-          language: _sourceLang,
+        final found = _allWords.firstWhere(
+          (word) =>
+              (word[_sourceLang] as String).toLowerCase() ==
+              token.toLowerCase(),
+          orElse: () => {},
         );
-
-        if (results.isNotEmpty) {
-          translatedTokens.add(results.first[_targetLang] ?? '');
+        if (found.isNotEmpty &&
+            found[_targetLang] != null &&
+            found[_targetLang].toString().isNotEmpty) {
+          translatedTokens.add(found[_targetLang]);
         } else {
           translatedTokens.add('[?]');
         }
       }
     }
+    return translatedTokens.join(' ');
+  }
 
+  void _searchWord() {
+    final input = _controller.text.trim();
     setState(() {
-      _result = _combineTokens(translatedTokens);
+      _result = _translateSentence(input);
     });
   }
 
   final FlutterTts flutterTts = FlutterTts();
   Future<void> _speak(String text) async {
     await flutterTts.setLanguage(
-      _targetLang == 'inggris'
+      _targetLang == 'english'
           ? 'en-US'
           : _targetLang == 'indonesia'
           ? 'id-ID'
           : 'id-ID',
-    ); // fallback untuk bahasa lokal
-
+    );
     await flutterTts.setPitch(1.0);
     await flutterTts.setSpeechRate(0.5);
     await flutterTts.speak(text);
@@ -148,10 +142,17 @@ class _kalimatPageState extends State<kalimatPage> {
       backgroundColor: Colors.orange.shade50,
       body: Padding(
         padding: EdgeInsets.all(screenWidth * 0.04),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             // Dropdown Bahasa Masukan dan Tujuan
+            Text(
+              'Pilih Bahasa',
+              style: TextStyle(
+                fontSize: screenWidth * 0.05,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -211,7 +212,7 @@ class _kalimatPageState extends State<kalimatPage> {
               controller: _controller,
               decoration: InputDecoration(
                 labelText: 'Masukkan kata atau kalimat',
-                hintText: "Saya Makan",
+                hintText: "Contoh: Saya Makan",
                 border: OutlineInputBorder(),
                 labelStyle: TextStyle(fontSize: screenWidth * 0.045),
                 hintStyle: TextStyle(fontSize: screenWidth * 0.045),
@@ -229,12 +230,16 @@ class _kalimatPageState extends State<kalimatPage> {
                 child: ElevatedButton.icon(
                   onPressed: _isListening ? _stopListening : _startListening,
                   icon: Icon(
+                    color: Colors.orange,
                     _isListening ? Icons.stop : Icons.mic,
                     size: screenWidth * 0.07,
                   ),
                   label: Text(
                     _isListening ? 'Berhenti' : 'Rekam',
-                    style: TextStyle(fontSize: screenWidth * 0.045),
+                    style: TextStyle(
+                      fontFamily: 'JosefinSans',
+                      fontSize: screenWidth * 0.045,
+                    ),
                   ),
                 ),
               ),
@@ -260,37 +265,40 @@ class _kalimatPageState extends State<kalimatPage> {
 
             // Hasil terjemahan
             if (_result != null)
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.all(screenWidth * 0.04),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      _result!,
-                      style: TextStyle(fontSize: screenWidth * 0.048),
-                    ),
-                  ),
-                  SizedBox(height: screenHeight * 0.012),
-                  SizedBox(
-                    width: screenWidth * 0.55,
-                    height: screenHeight * 0.06,
-                    child: ElevatedButton.icon(
-                      onPressed: () {
-                        _speak(_result!);
-                      },
-                      icon: Icon(Icons.volume_up, size: screenWidth * 0.07),
-                      label: Text(
-                        'Dengarkan',
-                        style: TextStyle(fontSize: screenWidth * 0.045),
+              Container(
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(screenWidth * 0.04),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        _result!,
+                        style: TextStyle(fontSize: screenWidth * 0.048),
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(height: screenHeight * 0.012),
+                    SizedBox(
+                      width: screenWidth * 0.55,
+                      height: screenHeight * 0.06,
+                      child: ElevatedButton.icon(
+                        onPressed: () {
+                          _speak(_result!);
+                        },
+                        icon: Icon(Icons.volume_up, size: screenWidth * 0.07),
+                        label: Text(
+                          'Dengarkan',
+                          style: TextStyle(fontSize: screenWidth * 0.045),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             SizedBox(height: screenHeight * 0.02),
           ],

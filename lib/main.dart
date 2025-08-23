@@ -52,62 +52,64 @@ class _KamusHomePageState extends State<KamusHomePage> {
         color: Colors.orange.shade50,
         width: double.infinity,
         child: Center(
-          child: Column(
-            children: [
-              SizedBox(height: screenHeight * 0.03),
-              Image.asset(
-                'assets/logo.png',
-                height: screenHeight * 0.18, // Responsive image height
-              ),
-              SizedBox(height: screenHeight * 0.012),
-              Text(
-                'Yotowawa',
-                style: GoogleFonts.anton(
-                  fontSize: screenWidth * 0.08, // Responsive font size
-                  color: Color.fromARGB(255, 235, 0, 2),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: screenHeight * 0.03),
+                Image.asset(
+                  'assets/logo.png',
+                  height: screenHeight * 0.18, // Responsive image height
                 ),
-              ),
-              SizedBox(height: screenHeight * 0.03),
-              ...['Kosakata', 'Kalimat', 'Percakapan', 'Quiz'].map((label) {
-                Widget page;
-                switch (label) {
-                  case 'Kosakata':
-                    page = kosakataPage();
-                    break;
-                  case 'Kalimat':
-                    page = kalimatPage();
-                    break;
-                  case 'Percakapan':
-                    page = percakapanPage();
-                    break;
-                  default:
-                    page = QuizPage();
-                }
-                return Padding(
-                  padding: EdgeInsets.only(bottom: screenHeight * 0.012),
-                  child: SizedBox(
-                    width: screenWidth * 0.6, // Responsive button width
-                    height: screenHeight * 0.07, // Responsive button height
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => page),
-                        );
-                      },
-                      child: Text(
-                        label,
-                        style: GoogleFonts.josefinSans(
-                          fontSize: screenWidth * 0.06,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                SizedBox(height: screenHeight * 0.012),
+                Text(
+                  'Yotowawa',
+                  style: GoogleFonts.anton(
+                    fontSize: screenWidth * 0.08, // Responsive font size
+                    color: Color.fromARGB(255, 235, 0, 2),
+                  ),
+                ),
+                SizedBox(height: screenHeight * 0.03),
+                ...['Kosakata', 'Kalimat', 'Percakapan', 'Quiz'].map((label) {
+                  Widget page;
+                  switch (label) {
+                    case 'Kosakata':
+                      page = kosakataPage();
+                      break;
+                    case 'Kalimat':
+                      page = kalimatPage();
+                      break;
+                    case 'Percakapan':
+                      page = percakapanPage();
+                      break;
+                    default:
+                      page = QuizPage();
+                  }
+                  return Padding(
+                    padding: EdgeInsets.only(bottom: screenHeight * 0.012),
+                    child: SizedBox(
+                      width: screenWidth * 0.6, // Responsive button width
+                      height: screenHeight * 0.07, // Responsive button height
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => page),
+                          );
+                        },
+                        child: Text(
+                          label,
+                          style: GoogleFonts.josefinSans(
+                            fontSize: screenWidth * 0.06,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                );
-              }),
-            ],
+                  );
+                }),
+              ],
+            ),
           ),
         ),
       ),

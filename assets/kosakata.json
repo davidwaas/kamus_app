@@ -1,0 +1,1514 @@
+[
+  {
+    "indonesia": "Saya",
+    "english": "I",
+    "oirata": "Maya'u",
+    "meher": "Ante"
+  },
+  {
+    "indonesia": "Makan",
+    "english": "Eat",
+    "oirata": "Ma'ak",
+    "meher": "Me'de"
+  },
+  {
+    "indonesia": "Tidur",
+    "english": "Sleep",
+    "oirata": "Namkuru",
+    "meher": "Ta'ya"
+  },
+  {
+    "indonesia": "Kebun",
+    "english": "Garden",
+    "oirata": "Kirna",
+    "meher": "Hala"
+  },
+  {
+    "indonesia": "Kambing",
+    "english": "Goat",
+    "oirata": "Pipi",
+    "meher": "Hihiyotowa"
+  },
+  {
+    "indonesia": "Jagung",
+    "english": "Corn",
+    "oirata": "Keleuk",
+    "meher": "Dthele"
+  },
+  {
+    "indonesia": "Jalan",
+    "english": "Road",
+    "oirata": "Kalla",
+    "meher": "Iyar"
+  },
+  {
+    "indonesia": "Ikan",
+    "english": "Fish",
+    "oirata": "I'in",
+    "meher": "Ahi"
+  },
+  {
+    "indonesia": "Siapa",
+    "english": "Who",
+    "oirata": "Inhoi",
+    "meher": "Uman"
+  },
+  {
+    "indonesia": "Pergi",
+    "english": "Go away",
+    "oirata": "Mala'a",
+    "meher": "Mara"
+  },
+  {
+    "indonesia": "Datang",
+    "english": "Come",
+    "oirata": "Mai",
+    "meher": "Ma'u"
+  },
+  {
+    "indonesia": "Matahari",
+    "english": "Sun",
+    "oirata": "Lere",
+    "meher": "Wadu"
+  },
+  {
+    "indonesia": "Hujan",
+    "english": "Rain",
+    "oirata": "okon",
+    "meher": "Aya"
+  },
+  {
+    "indonesia": "Panas",
+    "english": "Hot",
+    "oirata": "manha",
+    "meher": "Timnen"
+  },
+  {
+    "indonesia": "Bangun",
+    "english": "Wake up",
+    "oirata": "ma'mak",
+    "meher": "dur'e"
+  },
+  {
+    "indonesia": "Sakit",
+    "english": "Sick",
+    "oirata": "apin'ha",
+    "meher": "hanate, malare"
+  },
+  {
+    "indonesia": "Kepala",
+    "english": "Head",
+    "oirata": "uluwakun",
+    "meher": "yautapul"
+  },
+  {
+    "indonesia": "Kapan",
+    "english": "When",
+    "oirata": "Ma'anana",
+    "meher": "Tartei"
+  },
+  {
+    "indonesia": "Babi",
+    "english": "Pig",
+    "oirata": "Wawi",
+    "meher": "Hai"
+  },
+  {
+    "indonesia": "Anjing",
+    "english": "Dog",
+    "oirata": "Ahu",
+    "meher": "Ihar"
+  },
+  {
+    "indonesia": "Kucing",
+    "english": "Cat",
+    "oirata": "Pusi",
+    "meher": "Mau-mau"
+  },
+  {
+    "indonesia": "Meja",
+    "english": "Table",
+    "oirata": "Mei",
+    "meher": "Mei"
+  },
+  {
+    "indonesia": "Lampu",
+    "english": "Light",
+    "oirata": "Wadu",
+    "meher": "Aiwadu"
+  },
+  {
+    "indonesia": "Air",
+    "english": "Air",
+    "oirata": "Oir",
+    "meher": "Ira"
+  },
+  {
+    "indonesia": "Api",
+    "english": "Api",
+    "oirata": "Ai",
+    "meher": "Ad'a"
+  },
+  {
+    "indonesia": "Sekolah",
+    "english": "School",
+    "oirata": "Iskol",
+    "meher": "iskolo"
+  },
+  {
+    "indonesia": "Daun",
+    "english": "Leaf",
+    "oirata": "aukawi",
+    "meher": "asa"
+  },
+  {
+    "indonesia": "Mandi",
+    "english": "Bathe",
+    "oirata": "raroho",
+    "meher": "Imusan"
+  },
+  {
+    "indonesia": "Berapa",
+    "english": "How much",
+    "oirata": "wo'ira",
+    "meher": "Tarha"
+  },
+  {
+    "indonesia": "Harga",
+    "english": "Price",
+    "oirata": "Wella",
+    "meher": "Huran"
+  },
+  {
+    "indonesia": "Contoh",
+    "english": "Example",
+    "oirata": "hono'ok",
+    "meher": "Iyoo'neen"
+  },
+  {
+    "indonesia": "lupa",
+    "english": "forget",
+    "oirata": "hamlinu",
+    "meher": "Malpen"
+  },
+  {
+    "indonesia": "Cicak",
+    "english": "Lizard",
+    "oirata": "Sesel",
+    "meher": "Hian"
+  },
+  {
+    "indonesia": "Rasa",
+    "english": "Flavor",
+    "oirata": "Kene",
+    "meher": "Rasa"
+  },
+  {
+    "indonesia": "Cerah",
+    "english": "Sunny",
+    "oirata": "Ropo",
+    "meher": "Taran"
+  },
+  {
+    "indonesia": "Cepat",
+    "english": "Fast",
+    "oirata": "Halhala",
+    "meher": "Walale"
+  },
+  {
+    "indonesia": "Datar",
+    "english": "Flat",
+    "oirata": "Pipilak",
+    "meher": "Ito one"
+  },
+  {
+    "indonesia": "Celana",
+    "english": "Trousers",
+    "oirata": "Sapolo",
+    "meher": "Saholo"
+  },
+  {
+    "indonesia": "Celup",
+    "english": "Dipped",
+    "oirata": "Ku'u",
+    "meher": "Mud'loyen"
+  },
+  {
+    "indonesia": "Catat",
+    "english": "Note",
+    "oirata": "Horok",
+    "meher": "Keri"
+  },
+  {
+    "indonesia": "Lembar",
+    "english": "Sheet",
+    "oirata": "A'un",
+    "meher": "Asa"
+  },
+  {
+    "indonesia": "Cari",
+    "english": "Search",
+    "oirata": "Anoin",
+    "meher": "Anayen"
+  },
+  {
+    "indonesia": "Jumpa",
+    "english": "see you",
+    "oirata": "Dawak",
+    "meher": "Itatanen"
+  },
+  {
+    "indonesia": "Cara",
+    "english": "Method",
+    "oirata": "Kalan",
+    "meher": "Cara"
+  },
+  {
+    "indonesia": "Campur",
+    "english": "Mix",
+    "oirata": "Wa'aha",
+    "meher": "Itawasen"
+  },
+  {
+    "indonesia": "Kursi",
+    "english": "Chair",
+    "oirata": "Kadere",
+    "meher": "Kadere"
+  },
+  {
+    "indonesia": "Rakyat",
+    "english": "People",
+    "oirata": "muku-heri",
+    "meher": "Momor"
+  },
+  {
+    "indonesia": "Suku",
+    "english": "Ethnic group",
+    "oirata": "Noho enihe",
+    "meher": "Suku"
+  },
+  {
+    "indonesia": "Bambu",
+    "english": "Bamboo",
+    "oirata": "Our",
+    "meher": "Ete"
+  },
+  {
+    "indonesia": "Pulang",
+    "english": "Go home",
+    "oirata": "Wilu",
+    "meher": "Penu'n"
+  },
+  {
+    "indonesia": "bakat",
+    "english": "talent",
+    "oirata": "na'ikarn",
+    "meher": "Yalun"
+  },
+  {
+    "indonesia": "bakar",
+    "english": "burn",
+    "oirata": "Lokon",
+    "meher": "Isan"
+  },
+  {
+    "indonesia": "buah",
+    "english": "fruit",
+    "oirata": "Woin",
+    "meher": "Mene'n"
+  },
+  {
+    "indonesia": "Bunga",
+    "english": "Flower",
+    "oirata": "Dipin",
+    "meher": "Bunga"
+  },
+  {
+    "indonesia": "topi",
+    "english": "hat",
+    "oirata": "Karpusa",
+    "meher": "Tu'dun"
+  },
+  {
+    "indonesia": "pundak",
+    "english": "shoulders",
+    "oirata": "kawa'al",
+    "meher": "Papua"
+  },
+  {
+    "indonesia": "bahasa",
+    "english": "language",
+    "oirata": "Lira",
+    "meher": "Sohon"
+  },
+  {
+    "indonesia": "simbol",
+    "english": "symbol",
+    "oirata": "Wanakunu",
+    "meher": "Tad'an"
+  },
+  {
+    "indonesia": "cahaya",
+    "english": "light",
+    "oirata": "kaka",
+    "meher": "Aran"
+  },
+  {
+    "indonesia": "cadangan",
+    "english": "recommendation",
+    "oirata": "Heneren",
+    "meher": "Cadangan"
+  },
+  {
+    "indonesia": "cabang",
+    "english": "branch",
+    "oirata": "hana",
+    "meher": "Tara'n"
+  },
+  {
+    "indonesia": "kayu",
+    "english": "wood",
+    "oirata": "Au",
+    "meher": "Add'a"
+  },
+  {
+    "indonesia": "bagian",
+    "english": "part",
+    "oirata": "Dunurum",
+    "meher": "O'opa"
+  },
+  {
+    "indonesia": "arah",
+    "english": "direction",
+    "oirata": "Ulu",
+    "meher": "Mara-maran"
+  },
+  {
+    "indonesia": "Aneh",
+    "english": "Strange",
+    "oirata": "Namehi",
+    "meher": "Tetelira"
+  },
+  {
+    "indonesia": "bagaimana",
+    "english": "How",
+    "oirata": "hi'ihewi",
+    "meher": "In'oone"
+  },
+  {
+    "indonesia": "Keluarga",
+    "english": "Family",
+    "oirata": "Ri or'wali",
+    "meher": "Natara"
+  },
+  {
+    "indonesia": "Rumah",
+    "english": "House",
+    "oirata": "Rome",
+    "meher": "Natara"
+  },
+  {
+    "indonesia": "Sendal",
+    "english": "Sandal",
+    "oirata": "Sendal",
+    "meher": "Sendal"
+  },
+  {
+    "indonesia": "Sepatu",
+    "english": "Shoe",
+    "oirata": "Sepatu",
+    "meher": "Iyakawar"
+  },
+  {
+    "indonesia": "Merah",
+    "english": "Red",
+    "oirata": "Memere",
+    "meher": "Mimraka"
+  },
+  {
+    "indonesia": "Uang",
+    "english": "Money",
+    "oirata": "Kupan",
+    "meher": "Doit"
+  },
+  {
+    "indonesia": "Jam",
+    "english": "O'clock",
+    "oirata": "Ors",
+    "meher": "Inamodo lolon"
+  },
+  {
+    "indonesia": "Satu",
+    "english": "One",
+    "oirata": "Ida",
+    "meher": "Uwani"
+  },
+  {
+    "indonesia": "Dua",
+    "english": "Two",
+    "oirata": "Woro'o",
+    "meher": "Ei"
+  },
+  {
+    "indonesia": "Tiga",
+    "english": "Three",
+    "oirata": "Wokelu",
+    "meher": "Utu"
+  },
+  {
+    "indonesia": "empat",
+    "english": "four",
+    "oirata": "Wo'aka",
+    "meher": "Pat"
+  },
+  {
+    "indonesia": "Lima",
+    "english": "Five",
+    "oirata": "Wolima",
+    "meher": "Lim"
+  },
+  {
+    "indonesia": "Enam",
+    "english": "More",
+    "oirata": "Woneme",
+    "meher": "Nem"
+  },
+  {
+    "indonesia": "Tujuh",
+    "english": "Seven",
+    "oirata": "Woisuk",
+    "meher": "Pitu"
+  },
+  {
+    "indonesia": "Delapan",
+    "english": "Eight",
+    "oirata": "Woa",
+    "meher": "Kapa"
+  },
+  {
+    "indonesia": "Sembilan",
+    "english": "Nine",
+    "oirata": "Wohi",
+    "meher": "Siwa"
+  },
+  {
+    "indonesia": "Sepuluh",
+    "english": "Ten",
+    "oirata": "Idwelu",
+    "meher": "Ta'an auni"
+  },
+  {
+    "indonesia": "Gelas",
+    "english": "Glass",
+    "oirata": "Galas",
+    "meher": "Aklas"
+  },
+  {
+    "indonesia": "Piring",
+    "english": "Plate",
+    "oirata": "Rau",
+    "meher": "Da'au"
+  },
+  {
+    "indonesia": "Laut",
+    "english": "Sea",
+    "oirata": "Kahi",
+    "meher": "Lorai"
+  },
+  {
+    "indonesia": "Udara",
+    "english": "Air",
+    "oirata": "An'na",
+    "meher": "Medai"
+  },
+  {
+    "indonesia": "Batu",
+    "english": "Rock",
+    "oirata": "Waku",
+    "meher": "Uwaraha"
+  },
+  {
+    "indonesia": "Bulan",
+    "english": "Month",
+    "oirata": "Wollo",
+    "meher": "Uru"
+  },
+  {
+    "indonesia": "Bintang",
+    "english": "Star",
+    "oirata": "Kalioro",
+    "meher": "Matakana"
+  },
+  {
+    "indonesia": "Badan",
+    "english": "Many",
+    "oirata": "Ihin",
+    "meher": "Napur"
+  },
+  {
+    "indonesia": "Nama",
+    "english": "No",
+    "oirata": "Naran",
+    "meher": "Ne'ne"
+  },
+  {
+    "indonesia": "Tanggal",
+    "english": "Date",
+    "oirata": "Ler'alam",
+    "meher": "Tanggal"
+  },
+  {
+    "indonesia": "Lahir",
+    "english": "Born",
+    "oirata": "Mori",
+    "meher": "Miren"
+  },
+  {
+    "indonesia": "Alamat",
+    "english": "Address",
+    "oirata": "Holi",
+    "meher": "Ina'nanin"
+  },
+  {
+    "indonesia": "Nomor",
+    "english": "Number",
+    "oirata": "Lisar",
+    "meher": "Nomor"
+  },
+  {
+    "indonesia": "Desa",
+    "english": "Village",
+    "oirata": "Leke",
+    "meher": "Momor"
+  },
+  {
+    "indonesia": "Kecamatan",
+    "english": "Subdistrict",
+    "oirata": "Kecamatan",
+    "meher": "Solin"
+  },
+  {
+    "indonesia": "Kabupaten",
+    "english": "Regency",
+    "oirata": "Kabupaten",
+    "meher": "kabupaten"
+  },
+  {
+    "indonesia": "Tahun",
+    "english": "Year",
+    "oirata": "Ana",
+    "meher": "tawan"
+  },
+  {
+    "indonesia": "Kacang",
+    "english": "Peanut",
+    "oirata": "Laururu",
+    "meher": "Ta'aun"
+  },
+  {
+    "indonesia": "Pepaya",
+    "english": "Pawpaw",
+    "oirata": "Mu'uwoi",
+    "meher": "Mumlai"
+  },
+  {
+    "indonesia": "Buka",
+    "english": "Open",
+    "oirata": "Hari yala",
+    "meher": "Urahai"
+  },
+  {
+    "indonesia": "Tutup",
+    "english": "Closed",
+    "oirata": "Elek",
+    "meher": "Utuni'ii"
+  },
+  {
+    "indonesia": "Coba",
+    "english": "Try",
+    "oirata": "Koko",
+    "meher": "Coba"
+  },
+  {
+    "indonesia": "Lagi",
+    "english": "Again",
+    "oirata": "Me'e",
+    "meher": "Alnin"
+  },
+  {
+    "indonesia": "Lagu",
+    "english": "Lagu",
+    "oirata": "Hanara",
+    "meher": "Leu'ul"
+  },
+  {
+    "indonesia": "Suara",
+    "english": "Voice",
+    "oirata": "Lira",
+    "meher": "Ma'a"
+  },
+  {
+    "indonesia": "Awan",
+    "english": "Cloud",
+    "oirata": "A'am",
+    "meher": "Umayamoin"
+  },
+  {
+    "indonesia": "Gatal",
+    "english": "Itching",
+    "oirata": "Akal",
+    "meher": "Uhuten"
+  },
+  {
+    "indonesia": "Luka",
+    "english": "Wound",
+    "oirata": "No'o",
+    "meher": "Kak'e"
+  },
+  {
+    "indonesia": "Pukul",
+    "english": "O'clock",
+    "oirata": "Nukur",
+    "meher": "Uddan"
+  },
+  {
+    "indonesia": "Kirim",
+    "english": "Send",
+    "oirata": "Aku",
+    "meher": "Nakatun"
+  },
+  {
+    "indonesia": "Terima",
+    "english": "Accept",
+    "oirata": "Kokala",
+    "meher": "Adahalen"
+  },
+  {
+    "indonesia": "Putar",
+    "english": "Turn",
+    "oirata": "Pokor",
+    "meher": "putaren"
+  },
+  {
+    "indonesia": "Kembali",
+    "english": "Return",
+    "oirata": "Wali",
+    "meher": "Adahalen"
+  },
+  {
+    "indonesia": "Dapur",
+    "english": "Kitchen",
+    "oirata": "Dapur",
+    "meher": "Adalapur"
+  },
+  {
+    "indonesia": "Maju",
+    "english": "Proceed",
+    "oirata": "Nala'a",
+    "meher": "Umarai"
+  },
+  {
+    "indonesia": "Mundur",
+    "english": "Defeat",
+    "oirata": "So'ok",
+    "meher": "Mundur"
+  },
+  {
+    "indonesia": "Lampu",
+    "english": "Light",
+    "oirata": "Wadu",
+    "meher": "Aiwadu"
+  },
+  {
+    "indonesia": "Listrik",
+    "english": "Electricity",
+    "oirata": "Wadu",
+    "meher": "Aiwadu aran"
+  },
+  {
+    "indonesia": "Mati",
+    "english": "Dead",
+    "oirata": "Maki",
+    "meher": "Umu"
+  },
+  {
+    "indonesia": "Menyala",
+    "english": "Light up",
+    "oirata": "Mori",
+    "meher": "Laire"
+  },
+  {
+    "indonesia": "Lilin",
+    "english": "Candle",
+    "oirata": "Lil'la",
+    "meher": "Us'u"
+  },
+  {
+    "indonesia": "Gelap",
+    "english": "It's dark",
+    "oirata": "Nau'metek",
+    "meher": "Kokopete"
+  },
+  {
+    "indonesia": "Terang",
+    "english": "Bright",
+    "oirata": "Ropo",
+    "meher": "Umaran"
+  },
+  {
+    "indonesia": "Jendela",
+    "english": "Window",
+    "oirata": "Hawolo",
+    "meher": "Dau'ru"
+  },
+  {
+    "indonesia": "Pintu",
+    "english": "The door",
+    "oirata": "Nik",
+    "meher": "O'omana"
+  },
+  {
+    "indonesia": "Atap",
+    "english": "Roof",
+    "oirata": "Kawar",
+    "meher": "Huina"
+  },
+  {
+    "indonesia": "Lantai",
+    "english": "Floor",
+    "oirata": "Danak",
+    "meher": "Lau-lau"
+  },
+  {
+    "indonesia": "Lebih",
+    "english": "More",
+    "oirata": "Narehi",
+    "meher": "Lapane"
+  },
+  {
+    "indonesia": "Kurang",
+    "english": "Not enough",
+    "oirata": "Kurna",
+    "meher": "Dodoli"
+  },
+  {
+    "indonesia": "Ular",
+    "english": "They are",
+    "oirata": "Nee",
+    "meher": "Nana"
+  },
+  {
+    "indonesia": "Cicak",
+    "english": "Lizard",
+    "oirata": "Sesel",
+    "meher": "Hian"
+  },
+  {
+    "indonesia": "Lalat",
+    "english": "Flies",
+    "oirata": "Larra",
+    "meher": "Uhur"
+  },
+  {
+    "indonesia": "Nyamuk",
+    "english": "Mosquito",
+    "oirata": "Namu",
+    "meher": "Nikin"
+  },
+  {
+    "indonesia": "Anak",
+    "english": "Child",
+    "oirata": "Anan",
+    "meher": "Modo"
+  },
+  {
+    "indonesia": "Domba",
+    "english": "Sheep",
+    "oirata": "Pipduma",
+    "meher": "Hihi duma"
+  },
+  {
+    "indonesia": "Tutup",
+    "english": "Closed",
+    "oirata": "Elek",
+    "meher": "Utuni"
+  },
+  {
+    "indonesia": "Buka",
+    "english": "Open",
+    "oirata": "Hari yala",
+    "meher": "Urahai"
+  },
+  {
+    "indonesia": "Berat",
+    "english": "Heavy",
+    "oirata": "Werek",
+    "meher": "Tu'uree"
+  },
+  {
+    "indonesia": "Ringan",
+    "english": "Light",
+    "oirata": "Namrana",
+    "meher": "Mamawata"
+  },
+  {
+    "indonesia": "Buang",
+    "english": "Throw away",
+    "oirata": "Sopol",
+    "meher": "Iur'la"
+  },
+  {
+    "indonesia": "Ambil",
+    "english": "Take it",
+    "oirata": "Ala",
+    "meher": "Al'mee"
+  },
+  {
+    "indonesia": "Jam",
+    "english": "O'clock",
+    "oirata": "Oras",
+    "meher": "Inamodo lolon"
+  },
+  {
+    "indonesia": "Peti",
+    "english": "chest",
+    "oirata": "Oplahar",
+    "meher": "Koholasa"
+  },
+  {
+    "indonesia": "Minyak",
+    "english": "Oil",
+    "oirata": "Wuru",
+    "meher": "Wuru"
+  },
+  {
+    "indonesia": "Toko",
+    "english": "Shop",
+    "oirata": "Toku",
+    "meher": "Toko"
+  },
+  {
+    "indonesia": "Rumput",
+    "english": "Grass",
+    "oirata": "Penek",
+    "meher": "Usa"
+  },
+  {
+    "indonesia": "Singkong",
+    "english": "Cassava",
+    "oirata": "Kaspi",
+    "meher": "Wadameden"
+  },
+  {
+    "indonesia": "Nasi",
+    "english": "Rice",
+    "oirata": "Ha'a",
+    "meher": "Meden tutana"
+  },
+  {
+    "indonesia": "Daging",
+    "english": "Meat",
+    "oirata": "Mahin",
+    "meher": "Leura"
+  },
+  {
+    "indonesia": "Bebek",
+    "english": "Baby",
+    "oirata": "Pepek",
+    "meher": "Asa"
+  },
+  {
+    "indonesia": "Beras",
+    "english": "Rice",
+    "oirata": "Alwerehe",
+    "meher": "Kal-kali"
+  },
+  {
+    "indonesia": "Rasa",
+    "english": "Flavor",
+    "oirata": "Kene",
+    "meher": "Rasa"
+  },
+  {
+    "indonesia": "Roda",
+    "english": "Wheel",
+    "oirata": "Roda",
+    "meher": "Loi-loin"
+  },
+  {
+    "indonesia": "Asap",
+    "english": "Asap",
+    "oirata": "Mahu",
+    "meher": "Teuwe'en"
+  },
+  {
+    "indonesia": "Topi",
+    "english": "Hat",
+    "oirata": "Karpusa",
+    "meher": "Tudun"
+  },
+  {
+    "indonesia": "Masak",
+    "english": "Cook",
+    "oirata": "Namkahar",
+    "meher": "Huyen"
+  },
+  {
+    "indonesia": "Mentah",
+    "english": "Raw",
+    "oirata": "Makmakal",
+    "meher": "U'uraka"
+  },
+  {
+    "indonesia": "Gelang",
+    "english": "Success",
+    "oirata": "Leli",
+    "meher": "Odo'n"
+  },
+  {
+    "indonesia": "Kalung",
+    "english": "Necklace",
+    "oirata": "Marpuhar",
+    "meher": "Mani-mani"
+  },
+  {
+    "indonesia": "Cincin",
+    "english": "Ring",
+    "oirata": "Deli",
+    "meher": "Kele-kele"
+  },
+  {
+    "indonesia": "Keringat",
+    "english": "Sweat",
+    "oirata": "Awene",
+    "meher": "Wayaa"
+  },
+  {
+    "indonesia": "Bunga",
+    "english": "Flower",
+    "oirata": "Dipin",
+    "meher": "Bunga"
+  },
+  {
+    "indonesia": "Buah",
+    "english": "Fruit",
+    "oirata": "Woin",
+    "meher": "Mana"
+  },
+  {
+    "indonesia": "Daun",
+    "english": "Leaf",
+    "oirata": "Aukawi",
+    "meher": "Asa"
+  },
+  {
+    "indonesia": "Batang",
+    "english": "boy",
+    "oirata": "Aun",
+    "meher": "Ara"
+  },
+  {
+    "indonesia": "Kuat",
+    "english": "Strong",
+    "oirata": "Ma'aruri",
+    "meher": "Rurin"
+  },
+  {
+    "indonesia": "Lemah",
+    "english": "Weak",
+    "oirata": "Mamal",
+    "meher": "Muhumahunen"
+  },
+  {
+    "indonesia": "Hari",
+    "english": "Day",
+    "oirata": "Lere",
+    "meher": "Wadu"
+  },
+  {
+    "indonesia": "Tahun",
+    "english": "Year",
+    "oirata": "Ana",
+    "meher": "Tawan"
+  },
+  {
+    "indonesia": "Gunting",
+    "english": "Scissors",
+    "oirata": "Tonori",
+    "meher": "Tor-torin"
+  },
+  {
+    "indonesia": "Benang",
+    "english": "Thread",
+    "oirata": "Awah",
+    "meher": "Kaisala"
+  },
+  {
+    "indonesia": "Jarum",
+    "english": "Needle",
+    "oirata": "Wonaka",
+    "meher": "Aruman"
+  },
+  {
+    "indonesia": "Tolong",
+    "english": "Please",
+    "oirata": "Paku",
+    "meher": "Tul'nen"
+  },
+  {
+    "indonesia": "Telur",
+    "english": "Egg",
+    "oirata": "Kerre",
+    "meher": "Asa'udun"
+  },
+  {
+    "indonesia": "Bersih",
+    "english": "Clean",
+    "oirata": "Mou",
+    "meher": "Waran"
+  },
+  {
+    "indonesia": "Kotor",
+    "english": "Dirty",
+    "oirata": "Morso",
+    "meher": "Amseken"
+  },
+  {
+    "indonesia": "Lurus",
+    "english": "Straight",
+    "oirata": "Namduduk",
+    "meher": "Lorinan"
+  },
+  {
+    "indonesia": "belok",
+    "english": "turn",
+    "oirata": "Weweh",
+    "meher": "Belok"
+  },
+  {
+    "indonesia": "Tulis",
+    "english": "Write",
+    "oirata": "Horok",
+    "meher": "Kerin"
+  },
+  {
+    "indonesia": "Gambar",
+    "english": "Picture",
+    "oirata": "Gambar",
+    "meher": "Mamaron"
+  },
+  {
+    "indonesia": "Lagu",
+    "english": "Lagu",
+    "oirata": "Hanara",
+    "meher": "Leul"
+  },
+  {
+    "indonesia": "Menari",
+    "english": "Dance",
+    "oirata": "Waur",
+    "meher": "Wauren"
+  },
+  {
+    "indonesia": "Kakak",
+    "english": "Sister",
+    "oirata": "Tata",
+    "meher": "Ka"
+  },
+  {
+    "indonesia": "Adik",
+    "english": "Brother",
+    "oirata": "Karuri",
+    "meher": "No'o"
+  },
+  {
+    "indonesia": "Saudara",
+    "english": "brother",
+    "oirata": "Nara",
+    "meher": "Leren"
+  },
+  {
+    "indonesia": "Takut",
+    "english": "Scared",
+    "oirata": "namka'uk",
+    "meher": "Manen"
+  },
+  {
+    "indonesia": "Berani",
+    "english": "Be brave",
+    "oirata": "Berani",
+    "meher": "Yalun"
+  },
+  {
+    "indonesia": "Petik",
+    "english": "Pick",
+    "oirata": "Neku",
+    "meher": "Menen"
+  },
+  {
+    "indonesia": "Motor",
+    "english": "Motor",
+    "oirata": "Motor",
+    "meher": "Loi-loin"
+  },
+  {
+    "indonesia": "Pagi",
+    "english": "Morning",
+    "oirata": "Alalam",
+    "meher": "Nohen"
+  },
+  {
+    "indonesia": "Siang",
+    "english": "Afternoon",
+    "oirata": "Lerulu",
+    "meher": "Wadu muran"
+  },
+  {
+    "indonesia": "Sore",
+    "english": "Sore",
+    "oirata": "Lermamal",
+    "meher": "Wadu elewen"
+  },
+  {
+    "indonesia": "Malam",
+    "english": "night",
+    "oirata": "A'alam",
+    "meher": "Dedemanahen"
+  },
+  {
+    "indonesia": "Selimut",
+    "english": "A blanket",
+    "oirata": "Hamnono",
+    "meher": "Lau"
+  },
+  {
+    "indonesia": "Bantal",
+    "english": "Pillow",
+    "oirata": "Luni",
+    "meher": "Nayauruan"
+  },
+  {
+    "indonesia": "Kasur",
+    "english": "Mattress",
+    "oirata": "Kasur",
+    "meher": "Kasur"
+  },
+  {
+    "indonesia": "Kurus",
+    "english": "Which ones",
+    "oirata": "Nakrusa",
+    "meher": "Laka-lakaten"
+  },
+  {
+    "indonesia": "Gemuk",
+    "english": "Fat",
+    "oirata": "Poir",
+    "meher": "Mutuken"
+  },
+  {
+    "indonesia": "Muda",
+    "english": "Time",
+    "oirata": "Dudu'ul",
+    "meher": "Tuman"
+  },
+  {
+    "indonesia": "Tua",
+    "english": "Old",
+    "oirata": "Nai'ileher",
+    "meher": "Laiten"
+  },
+  {
+    "indonesia": "Bola",
+    "english": "She was",
+    "oirata": "Bal",
+    "meher": "Pal"
+  },
+  {
+    "indonesia": "Lihat",
+    "english": "Look",
+    "oirata": "Po'on",
+    "meher": "Wate'en"
+  },
+  {
+    "indonesia": "Dengar",
+    "english": "Listen",
+    "oirata": "Derne",
+    "meher": "Awarwaren"
+  },
+  {
+    "indonesia": "Bagus",
+    "english": "Good",
+    "oirata": "Ma'aruru",
+    "meher": "Yayanin"
+  },
+  {
+    "indonesia": "Kabel",
+    "english": "Cable",
+    "oirata": "Kabel",
+    "meher": "Kabel"
+  },
+  {
+    "indonesia": "Putus",
+    "english": "Separated",
+    "oirata": "Kaprohu",
+    "meher": ""
+  },
+  {
+    "indonesia": "Kebun",
+    "english": "Garden",
+    "oirata": "Kirna",
+    "meher": "Hala"
+  },
+  {
+    "indonesia": "Tanam",
+    "english": "Plant",
+    "oirata": "Kaman",
+    "meher": "Misi"
+  },
+  {
+    "indonesia": "Panen",
+    "english": "Harvest",
+    "oirata": "Neku",
+    "meher": "Didan"
+  },
+  {
+    "indonesia": "Minyak tanah",
+    "english": "Kerosene",
+    "oirata": "Min tanah",
+    "meher": "Mintan"
+  },
+  {
+    "indonesia": "menunggu",
+    "english": "wait",
+    "oirata": "Lapan",
+    "meher": "Tolin pai"
+  },
+  {
+    "indonesia": "mesin",
+    "english": "machine",
+    "oirata": "Mesin",
+    "meher": "Marsina"
+  },
+  {
+    "indonesia": "Tomat",
+    "english": "Tomato",
+    "oirata": "Tomati",
+    "meher": "Temati"
+  },
+  {
+    "indonesia": "Sirih",
+    "english": "Betel",
+    "oirata": "Malhu",
+    "meher": "Maluh"
+  },
+  {
+    "indonesia": "Pinang",
+    "english": "Pinang",
+    "oirata": "Po",
+    "meher": "Hua"
+  },
+  {
+    "indonesia": "Semut",
+    "english": "Ant",
+    "oirata": "Kerse",
+    "meher": "Muisara"
+  },
+  {
+    "indonesia": "Terima kasih",
+    "english": "Thank You",
+    "oirata": "Trim kasi",
+    "meher": "Kursalai"
+  },
+  {
+    "indonesia": "Juga",
+    "english": "Also",
+    "oirata": "Enih",
+    "meher": "Ede"
+  },
+  {
+    "indonesia": "Timur",
+    "english": "East",
+    "oirata": "Kimur",
+    "meher": ""
+  },
+  {
+    "indonesia": "Barat",
+    "english": "West",
+    "oirata": "Warak",
+    "meher": ""
+  },
+  {
+    "indonesia": "Selatan",
+    "english": "South",
+    "oirata": "Karana",
+    "meher": ""
+  },
+  {
+    "indonesia": "Utara",
+    "english": "North",
+    "oirata": "Ra'i",
+    "meher": "Ra'i"
+  },
+  {
+    "indonesia": "tambah",
+    "english": "add",
+    "oirata": "Nor",
+    "meher": "Tawani"
+  },
+  {
+    "indonesia": "Berjalan",
+    "english": "Walk",
+    "oirata": "Nala'a",
+    "meher": "la-lare, uale"
+  },
+  {
+    "indonesia": "jahit",
+    "english": "sewing",
+    "oirata": "Hour",
+    "meher": "U'ute"
+  },
+  {
+    "indonesia": "menjahit",
+    "english": "sewing",
+    "oirata": "Hour",
+    "meher": "u'utana pai"
+  },
+  {
+    "indonesia": "Rumput",
+    "english": "Grass",
+    "oirata": "Penek",
+    "meher": "Usa"
+  },
+  {
+    "indonesia": "Rumah sakit",
+    "english": "Hospital",
+    "oirata": "Room apinha",
+    "meher": "Hanat le"
+  },
+  {
+    "indonesia": "Rintik-rintik",
+    "english": "Drizzle",
+    "oirata": "Okon hapun",
+    "meher": "Lirliri"
+  },
+  {
+    "indonesia": "Berenang",
+    "english": "Swim",
+    "oirata": "Nani",
+    "meher": "Naaye"
+  },
+  {
+    "indonesia": "Masyarakat",
+    "english": "Public",
+    "oirata": "Ri namori",
+    "meher": "Momorlet"
+  },
+  {
+    "indonesia": "Rapat",
+    "english": "Meeting",
+    "oirata": "Pakrom wuku",
+    "meher": "Laune"
+  },
+  {
+    "indonesia": "hampir",
+    "english": "almost",
+    "oirata": "Malo'o",
+    "meher": "Neme-neme"
+  },
+  {
+    "indonesia": "lapangan",
+    "english": "field",
+    "oirata": "Lapangan",
+    "meher": "taus"
+  },
+  {
+    "indonesia": "menghalangi",
+    "english": "obstruct",
+    "oirata": "Kawala",
+    "meher": "utyete"
+  },
+  {
+    "indonesia": "lembut",
+    "english": "soft",
+    "oirata": "Mamal",
+    "meher": "Ma'mala"
+  },
+  {
+    "indonesia": "lidah",
+    "english": "tongue",
+    "oirata": "Naman",
+    "meher": "Uhul"
+  },
+  {
+    "indonesia": "lalu",
+    "english": "Then",
+    "oirata": "Lalu",
+    "meher": "Le"
+  },
+  {
+    "indonesia": "kapur",
+    "english": "kapur",
+    "oirata": "Aur",
+    "meher": "Aur"
+  },
+  {
+    "indonesia": "kapas",
+    "english": "cotton",
+    "oirata": "Awah",
+    "meher": "Kaisala"
+  },
+  {
+    "indonesia": "kain",
+    "english": "cloth",
+    "oirata": "Hamnono",
+    "meher": "Lau"
+  },
+  {
+    "indonesia": "luas",
+    "english": "wide",
+    "oirata": "Naphari",
+    "meher": "Malware"
+  },
+  {
+    "indonesia": "luar",
+    "english": "outside",
+    "oirata": "Parhin",
+    "meher": "Mal'ni"
+  },
+  {
+    "indonesia": "lusa",
+    "english": "Portuguese",
+    "oirata": "In'woro'o",
+    "meher": "Etai"
+  },
+  {
+    "indonesia": "bakar",
+    "english": "burn",
+    "oirata": "Kunu",
+    "meher": ""
+  },
+  {
+    "indonesia": "membalas",
+    "english": "reply",
+    "oirata": "Walha",
+    "meher": "Liyare"
+  },
+  {
+    "indonesia": "goreng",
+    "english": "fry",
+    "oirata": "No'or",
+    "meher": "Raaye"
+  },
+  {
+    "indonesia": "ganggu",
+    "english": "bother",
+    "oirata": "Soko",
+    "meher": "Mila-mila"
+  },
+  {
+    "indonesia": "gembala",
+    "english": "shepherd",
+    "oirata": "Manhuri",
+    "meher": "Nernana"
+  }
+]

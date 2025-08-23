@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kamus_app/database_helper.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
 
 class kosakataPage extends StatefulWidget {
   const kosakataPage({super.key});
@@ -11,43 +12,52 @@ class kosakataPage extends StatefulWidget {
 class _kosakataPageState extends State<kosakataPage> {
   final TextEditingController _searchController = TextEditingController();
   List<Map<String, dynamic>> _words = [];
-  String? _activeLetter; // Tambahkan variabel untuk menandai tombol aktif
+  List<Map<String, dynamic>> _allWords = [];
+  String? _activeLetter;
 
-  Future<void> _searchWords(String keyword) async {
-    final db = DatabaseHelper();
-    final result = await db.searchByLanguage(
-      keyword: keyword,
-      language: 'indonesia',
+  Future<void> _loadWords() async {
+    final String jsonString = await rootBundle.loadString(
+      'assets/kosakata.json',
     );
+    final List<dynamic> jsonData = json.decode(jsonString);
     setState(() {
-      _words = result;
-      _activeLetter = null; // Reset highlight jika search manual
+      _allWords = jsonData.cast<Map<String, dynamic>>();
+      _words = _allWords;
     });
   }
 
-  Future<void> _filterByLetter(String letter) async {
-    final db = DatabaseHelper();
-    final result = await db.searchByLanguage(
-      keyword: '$letter',
-      language: 'indonesia',
-    );
+  void _searchWords(String keyword) {
     setState(() {
       _words =
-          result
+          _allWords
+              .where(
+                (word) => (word['indonesia'] as String).toLowerCase().contains(
+                  keyword.toLowerCase(),
+                ),
+              )
+              .toList();
+      _activeLetter = null;
+    });
+  }
+
+  void _filterByLetter(String letter) {
+    setState(() {
+      _words =
+          _allWords
               .where(
                 (word) => (word['indonesia'] as String)
                     .toLowerCase()
                     .startsWith(letter.toLowerCase()),
               )
               .toList();
-      _activeLetter = letter; // Set tombol aktif
+      _activeLetter = letter;
     });
   }
 
   @override
   void initState() {
     super.initState();
-    _searchWords('');
+    _loadWords();
   }
 
   @override
@@ -55,64 +65,83 @@ class _kosakataPageState extends State<kosakataPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Kosakata'),
-        backgroundColor: Colors.orange.shade100, // opsional: warna appbar
+        backgroundColor: Colors.orange.shade100,
         elevation: 0,
       ),
-      backgroundColor: Colors.orange.shade50, // Ganti warna background di sini
+      backgroundColor: Colors.orange.shade50,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Input dan tombol cari
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: _searchController,
-                    decoration: InputDecoration(labelText: 'Cari kata...'),
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {
-                    _searchWords(_searchController.text);
-                  },
-                ),
-              ],
-            ),
-
-            SizedBox(height: 10),
-
-            // Abjad A-Z
-            Wrap(
-              spacing: 4,
-              runSpacing: 4,
-              children: List.generate(26, (i) {
-                String letter = String.fromCharCode(65 + i); // ASCII A-Z
-                bool isActive = _activeLetter == letter;
-                return ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        isActive ? Colors.orange : null, // warna highlight
-                  ),
-                  onPressed: () => _filterByLetter(letter),
-                  child: Text(letter),
-                );
-              }),
-            ),
-
-            SizedBox(height: 10),
-
-            // Hasil pencarian
+            // Daftar hasil di kiri
             Expanded(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: _searchController,
+                          decoration: InputDecoration(
+                            labelText: 'Cari kata...',
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.search),
+                        onPressed: () {
+                          _searchWords(_searchController.text);
+                        },
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: _words.length,
+                      itemBuilder: (context, index) {
+                        final word = _words[index];
+                        return ListTile(
+                          title: Text(word['indonesia']),
+                          subtitle: Text(
+                            'Inggris: ${word['english']} | Oirata: ${word['oirata']} | Meher: ${word['meher']}',
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(width: 8),
+            // Filter huruf di kanan dengan font kecil
+            SizedBox(
+              width: 32,
               child: ListView.builder(
-                itemCount: _words.length,
-                itemBuilder: (context, index) {
-                  final word = _words[index];
-                  return ListTile(
-                    title: Text(word['indonesia']),
-                    subtitle: Text(
-                      'Inggris: ${word['inggris']} | Meher: ${word['meher']} | oirata: ${word['oirata']}',
+                itemCount: 26,
+                itemBuilder: (context, i) {
+                  String letter = String.fromCharCode(65 + i);
+                  bool isActive = _activeLetter == letter;
+                  return GestureDetector(
+                    onTap: () => _filterByLetter(letter),
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 1),
+                      decoration: BoxDecoration(
+                        color: isActive ? Colors.orange : Colors.transparent,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Center(
+                        child: Text(
+                          letter,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: isActive ? Colors.white : Colors.black,
+                            fontSize:
+                                13, // Ukuran font kecil agar muat semua huruf
+                          ),
+                        ),
+                      ),
                     ),
                   );
                 },

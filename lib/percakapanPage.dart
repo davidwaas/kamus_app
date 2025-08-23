@@ -3,7 +3,8 @@ import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:kamus_app/database_helper.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
 
 class percakapanPage extends StatefulWidget {
   @override
@@ -17,15 +18,28 @@ class _percakapanPageState extends State<percakapanPage> {
   bool _isListening = false;
   String _translatedText = "Hasil Terjemahan";
 
-  final List<String> languages = ['meher', 'oirata', 'indonesia', 'inggris'];
+  final List<String> languages = ['meher', 'oirata', 'indonesia', 'english'];
   String sourceLang = 'indonesia';
   String targetLang = 'meher';
+
+  List<Map<String, dynamic>> _allWords = [];
 
   @override
   void initState() {
     super.initState();
     _speech = stt.SpeechToText();
     _flutterTts = FlutterTts();
+    _loadWords();
+  }
+
+  Future<void> _loadWords() async {
+    final String jsonString = await rootBundle.loadString(
+      'assets/kosakata.json',
+    );
+    final List<dynamic> jsonData = json.decode(jsonString);
+    setState(() {
+      _allWords = jsonData.cast<Map<String, dynamic>>();
+    });
   }
 
   void _listen() async {
@@ -35,7 +49,7 @@ class _percakapanPageState extends State<percakapanPage> {
         setState(() => _isListening = true);
 
         await _speech.listen(
-          localeId: sourceLang == 'inggris' ? 'en_US' : 'id_ID',
+          localeId: sourceLang == 'english' ? 'en_US' : 'id_ID',
           onResult: (val) async {
             await _searchWord(val.recognizedWords);
           },
@@ -49,7 +63,7 @@ class _percakapanPageState extends State<percakapanPage> {
 
   Future<void> _speak() async {
     await _flutterTts.setLanguage(
-      targetLang == 'inggris'
+      targetLang == 'english'
           ? 'en-US'
           : targetLang == 'indonesia'
           ? 'id-ID'
@@ -61,8 +75,6 @@ class _percakapanPageState extends State<percakapanPage> {
   }
 
   Future<void> _searchWord(String input) async {
-    final db = DatabaseHelper();
-
     final wordRegExp = RegExp(r"[\w']+|[.,!?;]");
     final tokens =
         wordRegExp.allMatches(input).map((m) => m.group(0)!).toList();
@@ -72,12 +84,15 @@ class _percakapanPageState extends State<percakapanPage> {
       if (RegExp(r'[.,!?;]').hasMatch(token)) {
         translatedTokens.add(token);
       } else {
-        final results = await db.searchByLanguage(
-          keyword: token,
-          language: sourceLang,
+        final found = _allWords.firstWhere(
+          (word) =>
+              (word[sourceLang] as String).toLowerCase() == token.toLowerCase(),
+          orElse: () => {},
         );
-        if (results.isNotEmpty) {
-          translatedTokens.add(results.first[targetLang] ?? '');
+        if (found.isNotEmpty &&
+            found[targetLang] != null &&
+            found[targetLang].toString().isNotEmpty) {
+          translatedTokens.add(found[targetLang]);
         } else {
           translatedTokens.add('[?]');
         }
@@ -121,6 +136,8 @@ class _percakapanPageState extends State<percakapanPage> {
     );
   }
 
+  final TextEditingController _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -143,17 +160,16 @@ class _percakapanPageState extends State<percakapanPage> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(screenWidth * 0.06),
-          child: Column(
+          child: ListView(
             children: [
+              SizedBox(height: screenHeight * 0.02),
               Text(
-                'PERCAKAPAN',
+                'Pilih Bahasa',
                 style: GoogleFonts.lilitaOne(
-                  fontSize: screenWidth * 0.07,
-                  fontWeight: FontWeight.bold,
+                  fontSize: screenWidth * 0.05,
                   color: Colors.brown,
                 ),
               ),
-              SizedBox(height: screenHeight * 0.02),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -169,6 +185,15 @@ class _percakapanPageState extends State<percakapanPage> {
                 ],
               ),
               SizedBox(height: screenHeight * 0.04),
+              TextField(
+                controller: _controller,
+                decoration: InputDecoration(
+                  labelText: 'Masukkan kalimat',
+                  border: OutlineInputBorder(),
+                ),
+                onSubmitted: (val) => _searchWord(val),
+              ),
+              SizedBox(height: screenHeight * 0.02),
               IconButton(
                 icon: Icon(
                   Icons.mic,
@@ -177,7 +202,6 @@ class _percakapanPageState extends State<percakapanPage> {
                 ),
                 onPressed: _listen,
               ),
-              Text('Ucapkan', style: TextStyle(fontSize: screenWidth * 0.045)),
               SizedBox(height: screenHeight * 0.03),
               Container(
                 padding: EdgeInsets.all(screenWidth * 0.04),
