@@ -153,8 +153,6 @@ class _percakapanPageState extends State<percakapanPage> {
     );
   }
 
-  final TextEditingController _controller = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -204,15 +202,6 @@ class _percakapanPageState extends State<percakapanPage> {
                 ],
               ),
               SizedBox(height: screenHeight * 0.04),
-              TextField(
-                controller: _controller,
-                decoration: InputDecoration(
-                  labelText: 'Masukkan kalimat',
-                  border: OutlineInputBorder(),
-                ),
-                onSubmitted: (val) => _searchWord(val),
-              ),
-              SizedBox(height: screenHeight * 0.02),
               IconButton(
                 icon: Icon(
                   _isListening
