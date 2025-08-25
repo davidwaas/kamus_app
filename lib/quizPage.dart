@@ -16,7 +16,7 @@ class _QuizPageState extends State<QuizPage> {
       'type': 'kosakata',
       'image': 'assets/1.png',
       'question':
-          'Pada gambar diatas, anak kecil sedang tidur. Tidur dalam bahasa Meher adalah?',
+          'Pada gambar di atas, anak kecil sedang tidur. Tidur dalam bahasa Meher adalah?',
       'options': ['Namkuru', 'Ma’ak', 'Wakuku', 'Maroho'],
       'answer': 'Namkuru',
     },
@@ -38,7 +38,7 @@ class _QuizPageState extends State<QuizPage> {
     {
       'type': 'kosakata',
       'image': 'assets/4.png',
-      'question': "Sebutkan buah diatas dalam bahasa Oirata...",
+      'question': "Sebutkan buah di atas dalam bahasa Oirata...",
       'options': ["Mu'uwoi", 'Maplana', 'Haiya', 'Mumlay'],
       'answer': 'Haiya',
     },
@@ -46,14 +46,14 @@ class _QuizPageState extends State<QuizPage> {
       'type': 'kosakata',
       'image': 'assets/5.png',
       'question':
-          "Gambar diatas menunjukkan orang yang sedang makan. Apa kata makan dalam bahasa Meher ",
+          "Gambar di atas menunjukkan orang yang sedang makan. Apa kata makan dalam bahasa Meher ",
       'options': ['Namkuru', "Ma'ak", 'Wakuku', 'Maroho'],
       'answer': "Ma'ak",
     },
     {
       'type': 'kosakata',
       'image': 'assets/6.png',
-      'question': "Sebutkan nama hewan diatas menggunakan bahasa Meher.",
+      'question': "Sebutkan nama hewan di atas menggunakan bahasa Meher.",
       'options': ['Pipduma', 'Wawi', 'Ahu', 'Pipi'],
       'answer': 'Ahu',
     },
@@ -68,7 +68,7 @@ class _QuizPageState extends State<QuizPage> {
     {
       'type': 'kosakata',
       'image': 'assets/8.png',
-      'question': "Sebutkan bagian tubuh diatas menggunakkan bahasa Oirata.",
+      'question': "Sebutkan bagian tubuh di atas menggunakkan bahasa Oirata.",
       'options': ['Murwana', "O'o", 'Wali', "Ina'modo"],
       'answer': "Ina'modo",
     },
@@ -76,7 +76,7 @@ class _QuizPageState extends State<QuizPage> {
       'type': 'kosakata',
       'image': 'assets/9.png',
       'question':
-          "Sebutkan kegiatan apa yang sedang dilakukan pada gambar diatas menggunakan bahasa Oirata.",
+          "Sebutkan kegiatan apa yang sedang dilakukan pada gambar di atas menggunakan bahasa Oirata.",
       'options': ["I'nahanawe", 'Seselana ', "Ta'ya", 'Namkuru'],
       'answer': 'Saselena',
     },
@@ -295,13 +295,13 @@ class _QuizPageState extends State<QuizPage> {
   String _getInstruction(String? type) {
     switch (type) {
       case 'kosakata':
-        return 'Petunjuk:\nLihat gambar, lalu pilih jawaban yang benar sesuai dengan gambar tersebut.';
+        return 'Petunjuk:\nLihat gambar, kemudian pilihlah jawaban yang benar sesuai dengan gambar tersebut.';
       case 'kalimat':
         return 'Petunjuk:\nLengkapi kalimat dengan pilihan jawaban yang paling tepat.';
       case 'percakapan':
-        return 'Petunjuk:\nDengarkan audio, lalu pilih jawaban yang sesuai dengan percakapan.';
+        return 'Petunjuk:\nDengarkan audio, kemudian pilihlah jawaban yang sesuai dengan percakapan.';
       default:
-        return 'Petunjuk:\nPilih jawaban yang paling tepat.';
+        return 'Petunjuk:\nPilihlah jawaban yang paling tepat.';
     }
   }
 
@@ -449,6 +449,7 @@ class _QuizPageState extends State<QuizPage> {
                         fontSize: screenWidth * 0.055,
                         fontWeight: FontWeight.bold,
                       ),
+                      textAlign: TextAlign.justify,
                     ),
                     SizedBox(height: screenHeight * 0.03),
                     ...(question['options'] as List<String>)

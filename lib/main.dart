@@ -64,7 +64,8 @@ class _KamusHomePageState extends State<KamusHomePage> {
                 Text(
                   'Yotowawa',
                   style: GoogleFonts.alexBrush(
-                    fontSize: screenWidth * 0.08, // Responsive font size
+                    fontSize: screenWidth * 0.104, // Responsive font size
+                    fontWeight: FontWeight.bold,
                     color: Color.fromARGB(255, 235, 0, 2),
                   ),
                 ),

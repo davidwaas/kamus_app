@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
+import 'dart:async';
 
 class percakapanPage extends StatefulWidget {
   @override
@@ -23,6 +24,8 @@ class _percakapanPageState extends State<percakapanPage> {
   String targetLang = 'meher';
 
   List<Map<String, dynamic>> _allWords = [];
+
+  Timer? _silenceTimer;
 
   @override
   void initState() {
@@ -51,11 +54,25 @@ class _percakapanPageState extends State<percakapanPage> {
         await _speech.listen(
           localeId: sourceLang == 'english' ? 'en_US' : 'id_ID',
           onResult: (val) async {
+            // Reset timer setiap ada suara
+            _silenceTimer?.cancel();
+            _silenceTimer = Timer(const Duration(seconds: 3), () {
+              _speech.stop();
+              setState(() => _isListening = false);
+            });
+
             await _searchWord(val.recognizedWords);
           },
         );
+
+        // Mulai timer saat mulai rekaman
+        _silenceTimer = Timer(const Duration(seconds: 3), () {
+          _speech.stop();
+          setState(() => _isListening = false);
+        });
       }
     } else {
+      _silenceTimer?.cancel();
       setState(() => _isListening = false);
       _speech.stop();
     }
@@ -198,7 +215,9 @@ class _percakapanPageState extends State<percakapanPage> {
               SizedBox(height: screenHeight * 0.02),
               IconButton(
                 icon: Icon(
-                  Icons.mic,
+                  _isListening
+                      ? Icons.stop_circle
+                      : Icons.mic, // berubah saat rekaman
                   color: Colors.brown,
                   size: screenWidth * 0.13,
                 ),
