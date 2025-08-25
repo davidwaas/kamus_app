@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:google_fonts/google_fonts.dart';
 
 class kalimatPage extends StatefulWidget {
   const kalimatPage({super.key});
@@ -135,7 +136,13 @@ class _kalimatPageState extends State<kalimatPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Kalimat', style: TextStyle(fontSize: screenWidth * 0.055)),
+        title: Text(
+          'Kalimat',
+          style: GoogleFonts.lilitaOne(
+            fontSize: screenWidth * 0.06,
+            color: Colors.brown,
+          ),
+        ),
         backgroundColor: Colors.orange.shade100,
         elevation: 0,
       ),
@@ -147,10 +154,9 @@ class _kalimatPageState extends State<kalimatPage> {
             // Dropdown Bahasa Masukan dan Tujuan
             Text(
               'Pilih Bahasa',
-              style: TextStyle(
+              style: GoogleFonts.lilitaOne(
                 fontSize: screenWidth * 0.05,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
+                color: Colors.brown,
               ),
             ),
             Row(
@@ -230,15 +236,15 @@ class _kalimatPageState extends State<kalimatPage> {
                 child: ElevatedButton.icon(
                   onPressed: _isListening ? _stopListening : _startListening,
                   icon: Icon(
-                    color: Colors.orange,
+                    color: Colors.brown,
                     _isListening ? Icons.stop : Icons.mic,
                     size: screenWidth * 0.07,
                   ),
                   label: Text(
                     _isListening ? 'Berhenti' : 'Rekam',
-                    style: TextStyle(
-                      fontFamily: 'JosefinSans',
+                    style: GoogleFonts.lilitaOne(
                       fontSize: screenWidth * 0.045,
+                      color: Colors.brown,
                     ),
                   ),
                 ),
@@ -255,7 +261,10 @@ class _kalimatPageState extends State<kalimatPage> {
                   onPressed: _searchWord,
                   child: Text(
                     'Terjemahkan',
-                    style: TextStyle(fontSize: screenWidth * 0.045),
+                    style: GoogleFonts.lilitaOne(
+                      fontSize: screenWidth * 0.045,
+                      color: Colors.brown,
+                    ),
                   ),
                 ),
               ),

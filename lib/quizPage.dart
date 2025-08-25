@@ -315,9 +315,9 @@ class _QuizPageState extends State<QuizPage> {
       appBar: AppBar(
         title: Text(
           'Kuis Gabungan',
-          style: GoogleFonts.josefinSans(
+          style: GoogleFonts.lilitaOne(
             fontSize: screenWidth * 0.055,
-            fontWeight: FontWeight.bold,
+            color: Colors.brown,
           ),
         ),
         backgroundColor: Colors.orange.shade100,
@@ -326,186 +326,188 @@ class _QuizPageState extends State<QuizPage> {
       backgroundColor: Colors.orange.shade50,
       body: Padding(
         padding: EdgeInsets.all(screenWidth * 0.04),
-        child: Center(
-          child:
-              _quizFinished
-                  ? Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Kuis Selesai!',
-                        style: GoogleFonts.josefinSans(
-                          fontSize: screenWidth * 0.07,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
+        child: ListView(
+          children: [
+            _quizFinished
+                ? Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      '~ KUIS SELESAI ~',
+                      style: GoogleFonts.lilitaOne(
+                        fontSize: screenWidth * 0.07,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown,
                       ),
-                      SizedBox(height: screenHeight * 0.03),
-                      Text(
-                        'SELAMAT !!!',
-                        style: GoogleFonts.josefinSans(
-                          fontSize: screenWidth * 0.07,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
+                    ),
+                    Text(
+                      'SELAMAT:',
+                      style: GoogleFonts.lilitaOne(
+                        fontSize: screenWidth * 0.07,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown,
                       ),
-                      Text(
-                        'Skor Anda: $_score dari ${_questions.length}',
-                        style: GoogleFonts.josefinSans(
-                          fontSize: screenWidth * 0.07,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
+                    ),
+                    Text(
+                      'Jawaban Benar Anda: $_score/${_questions.length}',
+                      style: GoogleFonts.abel(
+                        fontSize: screenWidth * 0.07,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
-                      SizedBox(height: screenHeight * 0.03),
-                      SizedBox(
-                        width: screenWidth * 0.5,
-                        height: screenHeight * 0.07,
-                        child: ElevatedButton(
-                          onPressed: _resetQuiz,
-                          child: Text(
-                            'Ulangi Kuis',
-                            style: GoogleFonts.josefinSans(
-                              fontSize: screenWidth * 0.05,
-                              fontWeight: FontWeight.bold,
-                            ),
+                    ),
+                    SizedBox(height: screenHeight * 0.02),
+                    SizedBox(
+                      width: screenWidth * 0.5,
+                      height: screenHeight * 0.07,
+                      child: ElevatedButton(
+                        onPressed: _resetQuiz,
+                        child: Text(
+                          'Ulangi Kuis',
+                          style: GoogleFonts.lilitaOne(
+                            fontSize: screenWidth * 0.05,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.brown,
                           ),
                         ),
                       ),
-                    ],
-                  )
-                  : Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      // Petunjuk pengerjaan soal
-                      Container(
-                        padding: EdgeInsets.all(screenWidth * 0.03),
-                        margin: EdgeInsets.only(bottom: screenHeight * 0.02),
-                        decoration: BoxDecoration(
-                          color: Colors.orange.shade100,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Text(
-                          _getInstruction(question['type'] as String?),
-                          style: TextStyle(fontSize: screenWidth * 0.045),
-                        ),
+                    ),
+                  ],
+                )
+                : Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    // Petunjuk pengerjaan soal
+                    Container(
+                      padding: EdgeInsets.all(screenWidth * 0.03),
+                      margin: EdgeInsets.only(bottom: screenHeight * 0.02),
+                      decoration: BoxDecoration(
+                        color: Colors.orange.shade100,
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                      Text(
-                        'Soal ${_currentQuestion + 1} dari ${_questions.length}',
-                        style: TextStyle(fontSize: screenWidth * 0.05),
+                      child: Text(
+                        _getInstruction(question['type'] as String?),
+                        style: GoogleFonts.abel(fontSize: screenWidth * 0.04),
+                        textAlign: TextAlign.justify,
                       ),
-                      SizedBox(height: screenHeight * 0.02),
-                      if (question['type'] == 'kosakata' &&
-                          question['image'] != null)
-                        Image.asset(
-                          question['image'] as String,
-                          height: screenHeight * 0.20,
-                        ),
-                      if (question['type'] == 'percakapan' &&
-                          question['context'] != null)
-                        ...((question['context'] as List)
-                            .map(
-                              (dialog) => Row(
-                                children: [
-                                  if (dialog is Map && dialog['audio'] != null)
-                                    IconButton(
-                                      icon: Icon(
-                                        Icons.play_arrow,
-                                        size: screenWidth * 0.13,
-                                        color: Colors.deepPurple,
-                                      ),
-                                      onPressed:
-                                          () => _playAudio(
-                                            dialog['audio'] as String,
-                                          ),
-                                    ),
-                                  if (dialog is Map && dialog['label'] != null)
-                                    Text(
-                                      dialog['label'],
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: screenWidth * 0.05,
-                                        color: Colors.deepPurple,
-                                      ),
-                                    ),
-                                  if (dialog is Map && dialog['text'] != null)
-                                    Text(
-                                      dialog['text'],
-                                      style: TextStyle(
-                                        fontSize: screenWidth * 0.045,
-                                      ),
-                                      textAlign: TextAlign.justify,
-                                    ),
-                                ],
-                              ),
-                            )
-                            .toList()),
-                      SizedBox(height: screenHeight * 0.01),
-                      Text(
-                        question['question'] as String,
-                        style: TextStyle(
-                          fontSize: screenWidth * 0.055,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    ),
+                    Text(
+                      'Soal ${_currentQuestion + 1} dari ${_questions.length}',
+                      style: TextStyle(fontSize: screenWidth * 0.05),
+                    ),
+                    SizedBox(height: screenHeight * 0.02),
+                    if (question['type'] == 'kosakata' &&
+                        question['image'] != null)
+                      Image.asset(
+                        question['image'] as String,
+                        height: screenHeight * 0.20,
                       ),
-                      SizedBox(height: screenHeight * 0.03),
-                      ...(question['options'] as List<String>)
-                          .asMap()
-                          .entries
-                          .map((entry) {
-                            int idx = entry.key;
-                            String option = entry.value;
-                            bool isPressed = _pressedOptionIndex == idx;
-                            return Container(
-                              margin: EdgeInsets.only(
-                                bottom: screenHeight * 0.012,
-                              ),
-                              child: GestureDetector(
-                                onTap: () => _answerQuestion(option),
-                                onTapDown: (_) {
-                                  setState(() {
-                                    _pressedOptionIndex = idx;
-                                  });
-                                },
-                                onTapUp: (_) {
-                                  setState(() {
-                                    _pressedOptionIndex = null;
-                                  });
-                                },
-                                onTapCancel: () {
-                                  setState(() {
-                                    _pressedOptionIndex = null;
-                                  });
-                                },
-                                child: AnimatedContainer(
-                                  duration: Duration(milliseconds: 100),
-                                  decoration: BoxDecoration(
-                                    color:
-                                        isPressed
-                                            ? Colors.deepPurple.shade100
-                                            : Colors.white,
-                                    borderRadius: BorderRadius.circular(30),
-                                    border: Border.all(
-                                      color: Colors.deepPurple.shade100,
+                    if (question['type'] == 'percakapan' &&
+                        question['context'] != null)
+                      ...((question['context'] as List)
+                          .map(
+                            (dialog) => Row(
+                              children: [
+                                if (dialog is Map && dialog['audio'] != null)
+                                  IconButton(
+                                    icon: Icon(
+                                      Icons.play_arrow,
+                                      size: screenWidth * 0.13,
+                                      color: Colors.brown,
+                                    ),
+                                    onPressed:
+                                        () => _playAudio(
+                                          dialog['audio'] as String,
+                                        ),
+                                  ),
+                                if (dialog is Map && dialog['label'] != null)
+                                  Text(
+                                    dialog['label'],
+                                    style: GoogleFonts.abel(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: screenWidth * 0.05,
+                                      color: Colors.brown,
                                     ),
                                   ),
-                                  height: screenHeight * 0.06,
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    option,
-                                    style: GoogleFonts.josefinSans(
-                                      fontSize: screenWidth * 0.05,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
+                                if (dialog is Map && dialog['text'] != null)
+                                  Text(
+                                    dialog['text'],
+                                    style: TextStyle(
+                                      fontSize: screenWidth * 0.045,
                                     ),
+                                    textAlign: TextAlign.justify,
+                                  ),
+                              ],
+                            ),
+                          )
+                          .toList()),
+                    SizedBox(height: screenHeight * 0.01),
+                    Text(
+                      question['question'] as String,
+                      style: GoogleFonts.abel(
+                        fontSize: screenWidth * 0.055,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: screenHeight * 0.03),
+                    ...(question['options'] as List<String>)
+                        .asMap()
+                        .entries
+                        .map((entry) {
+                          int idx = entry.key;
+                          String option = entry.value;
+                          bool isPressed = _pressedOptionIndex == idx;
+                          return Container(
+                            margin: EdgeInsets.only(
+                              bottom: screenHeight * 0.012,
+                            ),
+                            child: GestureDetector(
+                              onTap: () => _answerQuestion(option),
+                              onTapDown: (_) {
+                                setState(() {
+                                  _pressedOptionIndex = idx;
+                                });
+                              },
+                              onTapUp: (_) {
+                                setState(() {
+                                  _pressedOptionIndex = null;
+                                });
+                              },
+                              onTapCancel: () {
+                                setState(() {
+                                  _pressedOptionIndex = null;
+                                });
+                              },
+                              child: AnimatedContainer(
+                                duration: Duration(milliseconds: 100),
+                                decoration: BoxDecoration(
+                                  color:
+                                      isPressed
+                                          ? Colors.brown.shade100
+                                          : Colors.white,
+                                  borderRadius: BorderRadius.circular(30),
+                                  border: Border.all(
+                                    color: Colors.brown.shade100,
+                                  ),
+                                ),
+                                height: screenHeight * 0.06,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  option,
+                                  style: GoogleFonts.abel(
+                                    fontSize: screenWidth * 0.05,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
                                   ),
                                 ),
                               ),
-                            );
-                          }),
-                    ],
-                  ),
+                            ),
+                          );
+                        }),
+                  ],
+                ),
+          ],
         ),
       ),
     );

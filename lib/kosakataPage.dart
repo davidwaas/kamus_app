@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:google_fonts/google_fonts.dart';
 
 class kosakataPage extends StatefulWidget {
   const kosakataPage({super.key});
@@ -62,9 +63,18 @@ class _kosakataPageState extends State<kosakataPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Kosakata'),
+        title: Text(
+          'Kosakata',
+          style: GoogleFonts.lilitaOne(
+            fontSize: screenWidth * 0.06,
+            color: Colors.brown,
+          ),
+        ),
         backgroundColor: Colors.orange.shade100,
         elevation: 0,
       ),
@@ -96,7 +106,7 @@ class _kosakataPageState extends State<kosakataPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: screenHeight * 0.02),
                   Expanded(
                     child: ListView.builder(
                       itemCount: _words.length,
@@ -114,7 +124,7 @@ class _kosakataPageState extends State<kosakataPage> {
                 ],
               ),
             ),
-            SizedBox(width: 8),
+            SizedBox(width: screenWidth * 0.06),
             // Filter huruf di kanan dengan font kecil
             SizedBox(
               width: 32,

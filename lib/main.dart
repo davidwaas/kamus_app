@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kamus_app/kosakataPage.dart';
-import 'package:kamus_app/kalimatPage.dart';
-import 'package:kamus_app/percakapanPage.dart';
-import 'package:kamus_app/quizPage.dart';
+import 'package:Yotowawa/kosakataPage.dart';
+import 'package:Yotowawa/kalimatPage.dart';
+import 'package:Yotowawa/percakapanPage.dart';
+import 'package:Yotowawa/quizPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -38,11 +38,11 @@ class _KamusHomePageState extends State<KamusHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Kamus Bahasa Kisar',
-          style: GoogleFonts.josefinSans(
+          'KAMUS BAHASA KISAR',
+          style: GoogleFonts.lilitaOne(
             fontSize: screenWidth * 0.06, // Responsive font size
             fontWeight: FontWeight.bold,
-            color: Colors.black,
+            color: Colors.brown,
           ),
         ),
         backgroundColor: Colors.orange.shade100,
@@ -63,7 +63,7 @@ class _KamusHomePageState extends State<KamusHomePage> {
                 SizedBox(height: screenHeight * 0.012),
                 Text(
                   'Yotowawa',
-                  style: GoogleFonts.anton(
+                  style: GoogleFonts.alexBrush(
                     fontSize: screenWidth * 0.08, // Responsive font size
                     color: Color.fromARGB(255, 235, 0, 2),
                   ),

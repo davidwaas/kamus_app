@@ -147,7 +147,10 @@ class _percakapanPageState extends State<percakapanPage> {
       appBar: AppBar(
         title: Text(
           'Percakapan',
-          style: TextStyle(fontSize: screenWidth * 0.055),
+          style: GoogleFonts.lilitaOne(
+            fontSize: screenWidth * 0.06,
+            color: Colors.brown,
+          ),
         ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back, size: screenWidth * 0.07),
@@ -162,7 +165,6 @@ class _percakapanPageState extends State<percakapanPage> {
           padding: EdgeInsets.all(screenWidth * 0.06),
           child: ListView(
             children: [
-              SizedBox(height: screenHeight * 0.02),
               Text(
                 'Pilih Bahasa',
                 style: GoogleFonts.lilitaOne(
@@ -197,7 +199,7 @@ class _percakapanPageState extends State<percakapanPage> {
               IconButton(
                 icon: Icon(
                   Icons.mic,
-                  color: Colors.orange,
+                  color: Colors.brown,
                   size: screenWidth * 0.13,
                 ),
                 onPressed: _listen,
@@ -226,7 +228,7 @@ class _percakapanPageState extends State<percakapanPage> {
                     IconButton(
                       icon: Icon(
                         Icons.volume_up,
-                        color: Colors.orange,
+                        color: Colors.brown,
                         size: screenWidth * 0.08,
                       ),
                       onPressed: () async {
