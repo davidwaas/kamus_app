@@ -194,7 +194,17 @@ class _percakapanPageState extends State<percakapanPage> {
                     if (val != null) setState(() => sourceLang = val);
                   }),
                   SizedBox(width: screenWidth * 0.02),
-                  Icon(Icons.compare_arrows, size: screenWidth * 0.07),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        // Tukar bahasa asal dan tujuan
+                        final temp = sourceLang;
+                        sourceLang = targetLang;
+                        targetLang = temp;
+                      });
+                    },
+                    child: Icon(Icons.compare_arrows, size: screenWidth * 0.07),
+                  ),
                   SizedBox(width: screenWidth * 0.02),
                   languageSelector(targetLang, (val) {
                     if (val != null) setState(() => targetLang = val);
